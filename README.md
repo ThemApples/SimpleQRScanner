@@ -12,7 +12,7 @@ Locate the apk on your phone and install.
 
 ## Builds
 
-SimpleQRScanner V1.0
+- SimpleQRScanner V1.0
 	- Read an QR scanner and immediately take you to the url(if it is a URL).
 	- NO ADS
 
