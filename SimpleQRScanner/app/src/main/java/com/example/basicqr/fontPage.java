@@ -80,6 +80,14 @@ public class fontPage extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
+    public void openSettings(){
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", getPackageName(), null);
+        intent.setData(uri);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -88,8 +96,12 @@ public class fontPage extends AppCompatActivity implements View.OnClickListener 
                         Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(fontPage.this, "You have already granted this permission!",
                             Toast.LENGTH_SHORT).show();
+                            changeView();
                 } else {
                     requestStoragePermission();
+                    //Toast.makeText(fontPage.this, "You have installed the manual SimpleQRScanner.\n You have go to the apps permissions to allow this app to access the camera for it to work.",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(fontPage.this, "Redirecting you to the app settings.",Toast.LENGTH_SHORT).show();
+                    //openSettings();
                 }
 
             break;
